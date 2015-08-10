@@ -7,7 +7,8 @@ RUN mkdir -p /app &&\
     apt-get install -y \
         gfortran build-essential make gcc build-essential git-core curl wget \
         vim-tiny libsqlite3-dev sqlite3 libmysqlclient-dev python2.7 \
-        python2.7-dev python2.7 python-pip \
+        libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip \
+        python2.7-dev python2.7 python-pip python-virtualenv \
         libxml2-dev libxslt-dev openssh-server \
         docker.io &&\
     pip install --upgrade pip &&\
