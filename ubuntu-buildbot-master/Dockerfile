@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:15.10
 MAINTAINER samuelololol <samuelololol@gmail.com>
 
 RUN mkdir -p /app &&\
