@@ -51,4 +51,4 @@ CMD ["buildslave", "start", "--nodaemon", "/app"]
 
 # run buildbot-master
 #
-# $ docker run -d --name buildbotslave --link buildbotmaster:buildbotmaster -p 8010:8010 -p 9989:9989  ubuntu-buildbot-slave
+# $ docker run -d --name buildbotslave --link buildbotmaster:buildbotmaster ubuntu-buildbot-slave
