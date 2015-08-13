@@ -45,10 +45,7 @@ RUN apt-get install -y docker.io
 RUN ["chmod", "755", "/usr/local/bin/buildslave"]
 RUN ["buildslave", "create-slave", "--umask=022", "/app", "buildbotmaster:9989", "example-slave", "pass"]
 RUN apt-get clean && apt-get purge
-EXPOSE 8010
-
-CMD ["buildbot", "start", "--nodaemon", "/app"]
-
+CMD ["buildslave", "start", "--nodaemon", "/app"]
 
 
 
