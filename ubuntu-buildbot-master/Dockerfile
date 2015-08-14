@@ -1,4 +1,4 @@
-FROM ubuntu-buildbot-base
+FROM samuelololol/ubuntu-buildbot-base
 MAINTAINER samuelololol <samuelololol@gmail.com>
 RUN ["buildbot", "create-master", "-r", "/app"]
 ADD https://raw.githubusercontent.com/samuelololol/mydockerfiles/master/ubuntu-buildbot-master/master.cfg /app/master.cfg 
