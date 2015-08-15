@@ -8,7 +8,7 @@ RUN apt-get update && \
                        libsqlite3-dev sqlite3 libmysqlclient-dev postgresql \
                        libpq-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev \
                        libxml2-dev libxslt-dev openssh-server gettext unzip \
-                       docker.io && \
+                       docker.io docker-compose && \
     pip install --upgrade pip && \
     pip install buildbot buildbot-slave pytest nose PyMySQL && \
     chmod 755 /usr/local/bin/buildbot && \
