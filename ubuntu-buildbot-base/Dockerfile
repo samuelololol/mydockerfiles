@@ -10,7 +10,7 @@ RUN apt-get update && \
                        libxml2-dev libxslt-dev openssh-server gettext unzip \
                        docker.io docker-compose && \
     pip install --upgrade pip && \
-    pip install buildbot buildbot-slave pytest nose PyMySQL && \
+    pip install buildbot buildbot-slave pytest nose PyMySQL docker-py && \
     chmod 755 /usr/local/bin/buildbot && \
     chmod 755 /usr/local/bin/buildslave && \
     apt-get autoremove -y && \
