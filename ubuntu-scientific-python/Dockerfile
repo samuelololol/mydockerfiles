@@ -10,7 +10,7 @@ RUN mkdir -p /app &&\
     matplotlib numpy scipy requests pytest bottle BeautifulSoup
 
 WORKDIR /app
-EXPOSE 8080
-ENTRYPOINT ["python", "mini_server.py"]
-CMD ["asdf"]
+#EXPOSE 8080
+#ENTRYPOINT ["python", "mini_server.py"]
+#CMD ["asdf"]
 
