@@ -3,7 +3,7 @@ MAINTAINER samuelololol <samuelololol@gmail.com>
 
 RUN mkdir -p /app
 WORKDIR /app
-RUN pip install --no-cache-dir -r requirements.txt &&\
+RUN pip install -r requirements.txt &&\
     apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran &&\
     pip install --upgrade pip &&\
     pip install \
