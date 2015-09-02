@@ -7,13 +7,11 @@ RUN mkdir -p /app &&\
     pip install \
     --allow-external pyaudio \
     --allow-unverified pyaudio pyaudio \
-    matplotlib numpy scipy requests pytest bottle BeautifulSoup &&\
+    matplotlib numpy scipy requests pytest bottle BeautifulSoup celery[redis] &&\
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt-lists/*
 
 WORKDIR /app
-#EXPOSE 8080
-#ENTRYPOINT ["python", "mini_server.py"]
-#CMD ["asdf"]
+CMD ["celery", "-A", "tasks", "worker", "--loglevel=debug"]
 
