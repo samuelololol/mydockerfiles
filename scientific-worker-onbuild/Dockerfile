@@ -3,6 +3,7 @@ MAINTAINER samuelololol <samuelololol@gmail.com>
 
 RUN mkdir -p /app
 WORKDIR /app
+ONBUILD COPY . /app
 ONBUILD RUN pip install -r requirements.txt
 RUN apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran &&\
     pip install --upgrade pip &&\
@@ -10,6 +11,5 @@ RUN apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran &&\
     --allow-external pyaudio \
     --allow-unverified pyaudio pyaudio \
     matplotlib numpy scipy requests pytest bottle BeautifulSoup celery[redis]
-ONBUILD COPY . /app
 #CMD ["celery", "-A", "tasks", "worker", "--loglevel=debug"]
 
