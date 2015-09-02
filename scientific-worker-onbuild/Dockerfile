@@ -3,8 +3,8 @@ MAINTAINER samuelololol <samuelololol@gmail.com>
 
 RUN mkdir -p /app
 WORKDIR /app
-RUN pip install -r requirements.txt &&\
-    apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran &&\
+ONBUILD RUN pip install -r requirements.txt
+RUN apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran &&\
     pip install --upgrade pip &&\
     pip install \
     --allow-external pyaudio \
