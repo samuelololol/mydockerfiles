@@ -5,7 +5,8 @@ RUN mkdir -p /app
 WORKDIR /app
 ONBUILD COPY . /app
 ONBUILD RUN pip install -r requirements.txt
-RUN apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran \
+RUN apt-get update &&\
+    apt-get install -y sox portaudio19-dev libatlas-base-dev gfortran \
     build-essential python-dev libffi-dev libssl-dev &&\
     pip install --upgrade pip &&\
     pip install \
