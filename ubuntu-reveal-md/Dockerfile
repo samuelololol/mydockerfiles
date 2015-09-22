@@ -1,16 +1,11 @@
 from nodesource/vivid
 MAINTAINER samuelololol <samuelololol@gmail.com>
 
-RUN mkdir /app &&\
-    apt-get update
-RUN apt-get install -y git wget &&\
-    cd /app &&\
-    git clone https://github.com/webpro/reveal-md &&\
-    cd /app/reveal-md &&\
-    npm install -g &&\
-    wget https://github.com/samuelololol/mydockerfiles/raw/master/ubuntu-reveal-md/go.sh &&\
-    chmod 755 go.sh
+RUN mkdir -p /app/markdowns && cd /app
+WORKDIR /app
+RUN apt-get update  &&\
+    apt-get install -y git wget
+RUN npm install -g phantomjs reveal-md
 
-WORKDIR /app/reveal-md
-ENTRYPOINT ["/app/reveal-md/go.sh", "/app/reveal-md/demo"]
+ENTRYPOINT ["reveal-md", "/app/markdowns"]
 CMD ["--theme", "solarized"]
