@@ -7,7 +7,7 @@ RUN apt-get install -y git wget &&\
     cd /app &&\
     git clone https://github.com/webpro/reveal-md &&\
     cd /app/reveal-md &&\
-    npm install &&\
+    npm install -g &&\
     wget https://github.com/samuelololol/mydockerfiles/raw/master/ubuntu-reveal-md/go.sh &&\
     chmod 755 go.sh
 
