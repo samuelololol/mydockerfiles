@@ -1,0 +1,22 @@
+zk1:
+    build: .
+    environment:
+        MYID: 1
+
+zk2:
+    build: .
+    environment:
+        MYID: 2
+        ZK: zk1
+    links:
+        - zk1
+
+zk3:
+    build: .
+    environment:
+        MYID: 3
+        ZK: zk1
+    links:
+        - zk1
+
+
