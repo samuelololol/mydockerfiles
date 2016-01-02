@@ -1,7 +1,7 @@
 FROM ubuntu:vivid
 
 RUN apt-get update \
- && apt-get -y install git ant openjdk-8-jdk \
+ && apt-get -y install git ant openjdk-8-jdk docker.io jq\
  && apt-get clean
 RUN mkdir /tmp/zookeeper
 WORKDIR /tmp/zookeeper

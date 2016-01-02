@@ -1,5 +1,7 @@
 #!/bin/bash
-MYID=$MYID
+if [[ -z "$MYID"  ]]; then
+    export MYID=$(docker inspect `hostname` | jq --raw-output '.[0] | .Name' | awk -F_ '{print $3}')
+fi
 ZK=$ZK
 
 HOSTNAME=$(hostname)

@@ -1,22 +1,21 @@
-zk1:
-    build: .
+zkm:
+    extends:
+        file: docker-compose-common.yml
+        service: zookeeper
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
     environment:
-        MYID: 1
+        MYID: 0
 
-zk2:
-    build: .
+zks:
+    extends:
+        file: docker-compose-common.yml
+        service: zookeeper
     environment:
-        MYID: 2
-        ZK: zk1
+        ZK: zkm
+#        MYID: 2
     links:
-        - zk1
-
-zk3:
-    build: .
-    environment:
-        MYID: 3
-        ZK: zk1
-    links:
-        - zk1
-
+        - zkm
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
 
