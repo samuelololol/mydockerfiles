@@ -1,3 +1,4 @@
 zookeeper:
-    build: .
+    image: samuelololol/zookeeper
+    #build: .
 

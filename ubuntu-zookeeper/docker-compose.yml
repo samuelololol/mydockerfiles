@@ -1,21 +1,16 @@
 zkm:
-    extends:
-        file: docker-compose-common.yml
-        service: zookeeper
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
+    image: samuelololol/zookeeper
     environment:
         MYID: 0
-
-zks:
-    extends:
-        file: docker-compose-common.yml
-        service: zookeeper
-    environment:
-        ZK: zkm
-#        MYID: 2
-    links:
-        - zkm
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock
+
+zks:
+    image: samuelololol/zookeeper
+    environment:
+        ZK: zkm
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+    links:
+        - zkm
 
