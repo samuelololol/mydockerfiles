@@ -1,5 +1,6 @@
 kafka:
-    build: .
+    #build: .
+    image: samuelololol/kafka
     environment:
         KAFKA_HEAP_OPTS: '-Xmx64M -Xms64M'
         KAFKA_ZOOKEEPER_CONNECT: 'zk1:2181,zk2:2181,zk3:2181'
@@ -32,5 +33,4 @@ zk3:
         ZK: zk1
     links:
         - zk1
-
 
