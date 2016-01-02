@@ -1,0 +1,14 @@
+k1:
+    build: .
+    environment:
+        KAFKA_HEAP_OPTS: '-Xmx64M -Xms64M'
+        KAFKA_ZOOKEEPER_CONNECT: 'zk1:2181,zk2:2181,zk3:2181'
+        KAFKA_ADVERTISED_PORT: 9092
+        KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    external_links:
+        - ubuntuzookeeper_zkm_1:zk1
+        - ubuntuzookeeper_zks_1:zk2
+        - ubuntuzookeeper_zks_2:zk3
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+
