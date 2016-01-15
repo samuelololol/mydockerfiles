@@ -1,0 +1,11 @@
+FROM ubuntu:14.04
+MAINTAINER samuelololol <samuelololol@gmail.com>
+RUN apt-get update
+RUN apt-get build-dep -y gcc-4.6-base
+RUN apt-get install -y ncftp wget
+RUN cd /usr/include && ln -s x86_64-linux-gnu/* .; exit 0
+RUN cd /usr/lib && ln -s x86_64-linux-gnu/crt* .; exit 0
+RUN cd /root/ && wget http://www.csn.ul.ie/~mel/projects/codeviz/codeviz-1.0.12.tar.gz
+RUN cd /root/ && tar zxf codeviz-1.0.12.tar.gz
+COPY install_gcc-4.6.2.sh /root/codeviz-1.0.12/compilers/install_gcc-4.6.2.sh
+RUN cd /root/codeviz-1.0.12/ && ./configure && make && make install
