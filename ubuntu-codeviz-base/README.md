@@ -1,6 +1,7 @@
 ### execute
 
 ```
+$ cd <your project root>
 $ docker-compose run --rm codeviz
 ```
 
