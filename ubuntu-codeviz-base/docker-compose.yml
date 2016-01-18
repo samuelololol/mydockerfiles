@@ -1,0 +1,6 @@
+codeviz:
+    image: samuelololol/ubuntu-codeviz-base
+    volumes:
+        - .:/app
+    working_dir: /app
+    command: /app/codeviz-make.sh

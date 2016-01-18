@@ -1,3 +1,9 @@
+### execute
+
+```
+$ docker-compose run --rm codeviz
+```
+
 ### codeviz output
 
 ```
