@@ -1,4 +1,4 @@
-### how it works
+# how it works
 
 It mounts current folder(.) to /app in container and uses codeviz compiler (gcc,
 g++) to compile the source code in current folder, then generates the callgraph
@@ -7,12 +7,12 @@ in `png` format.
 You may add `make` options to `codeviz-make.sh` script, it will be executed
 via docker-compose command.
 
-### requirements
+## requirements
 
 * docker
 * docker-compose
 
-### execute
+## execute
 
 ```
 $ cp docker-compose.yml <your project root>
