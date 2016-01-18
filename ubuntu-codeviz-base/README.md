@@ -24,6 +24,10 @@ $ docker-compose run --rm codeviz
 
 # Appendix
 
+## Codeviz
+
+* [http://www.csn.ul.ie/~mel/projects/codeviz/](http://www.csn.ul.ie/~mel/projects/codeviz/)
+
 ### genfull help
 
 ```
