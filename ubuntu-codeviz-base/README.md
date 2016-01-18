@@ -1,6 +1,8 @@
 ### execute
 
 ```
+$ cp docker-compose.yml <your project root>
+$ cp codeviz-make.sh <your project root>
 $ cd <your project root>
 $ docker-compose run --rm codeviz
 ```
