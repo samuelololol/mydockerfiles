@@ -1,6 +1,7 @@
 kafka:
     #build: .
     image: samuelololol/kafka
+    command: start-kafka.sh master
     environment:
         KAFKA_HEAP_OPTS: '-Xmx64M -Xms64M'
         KAFKA_ZOOKEEPER_CONNECT: 'zk1:2181,zk2:2181,zk3:2181'
